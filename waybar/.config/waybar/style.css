@@ -1,0 +1,49 @@
+* {
+    font-family: "JetBrains Mono", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(26, 27, 38, 0.85); /* Sleek dark tint */
+    border-bottom: 2px solid rgba(59, 59, 89, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #ffffff;
+    border-bottom: 3px solid transparent;
+}
+
+/* Match your Hyprland active border colors */
+#workspaces button.active {
+    color: #33ccff;
+    border-bottom: 3px solid #00ff99;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid #33ccff;
+}
+
+#window,
+#cpu,
+#memory,
+#pulseaudio,
+#clock,
+#tray {
+    padding: 0 12px;
+    color: #ffffff;
+}
+
+/* Subtly separate system module fields */
+#cpu { color: #ff9e64; }
+#memory { color: #f7768e; }
+#pulseaudio { color: #bb9af7; }
+#clock { color: #7aa2f7; }
