@@ -4,7 +4,7 @@
 
 local terminal = "ghostty"
 local fileManager = "dolphin"
-local menu = "hyprlauncher"
+local menu = "~/.config/rofi/launchers/type-1/launcher.sh"
 local browser = "chromium"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
@@ -17,9 +17,11 @@ hl.bind(
 	mainMod .. " + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("pavucontrol"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("~/.config/rofi/powermenu/type-1/powermenu.sh"))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser))
 hl.bind(
 	mainMod .. " + SHIFT + P",
@@ -27,8 +29,15 @@ hl.bind(
 )
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("steam"))
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("launch-or-focus discord"))
+
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
+hl.bind(
+	mainMod .. " + V",
+	hl.dsp.exec_cmd(
+		"cliphist list | rofi -dmenu -i -display-columns 2 -theme ~/.config/rofi/launchers/type-1/style-1.rasi | cliphist decode | wl-copy"
+	)
+)
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
