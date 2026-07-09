@@ -1,0 +1,10 @@
+[config]
+theme_mode = "dark"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland.conf"
+output_path = "~/.config/hypr/matugen-colors.conf"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar.css"
+output_path = "~/.config/waybar/matugen-colors.css"
