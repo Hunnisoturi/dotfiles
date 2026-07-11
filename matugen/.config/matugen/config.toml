@@ -3,7 +3,7 @@ theme_mode = "dark"
 
 [templates.hyprland]
 input_path = "~/.config/matugen/templates/hyprland.conf"
-output_path = "~/.config/hypr/matugen-colors.conf"
+output_path = "~/.config/hypr/matugen-colors.lua"
 
 [templates.waybar]
 input_path = "~/.config/matugen/templates/waybar.css"

@@ -2,6 +2,8 @@
 ---- LOOK AND FEEL ----
 -----------------------
 
+local theme = require("matugen-colors")
+
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
 	general = {
@@ -11,8 +13,8 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
+			active_border = { colors = { theme.active_border_color }, angle = 45 },
+			inactive_border = theme.inactive_border_color,
 		},
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
