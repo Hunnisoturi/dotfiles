@@ -2,10 +2,6 @@
 ---- KEYBINDINGS ----
 ---------------------
 
-local terminal = "ghostty"
-local fileManager = "yazi"
-local browser = "helium-browser"
-
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 local ipc = "noctalia msg "
@@ -30,7 +26,7 @@ hl.window_rule({
 })
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus ghostty"]]))
 local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(
@@ -39,13 +35,13 @@ hl.bind(
 )
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("ghostty -e yazi"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus zen"]]))
 hl.bind(
 	mainMod .. " + SHIFT + P",
 	hl.dsp.exec_cmd("1password --ozone-platform-hint=wayland --enable-features=WaylandWindowDecorations")
 )
-hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("steam"))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("launch-or-focus discord"))
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus steam"]]))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus discord"]]))
 
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 --
