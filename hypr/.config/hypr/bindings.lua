@@ -41,7 +41,10 @@ hl.bind(
 	hl.dsp.exec_cmd("1password --ozone-platform-hint=wayland --enable-features=WaylandWindowDecorations")
 )
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus steam"]]))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus discord"]]))
+hl.bind(
+	mainMod .. " + SHIFT + D",
+	hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus vesktop 'uwsm-app -- vesktop'"]])
+)
 
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 --
