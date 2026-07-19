@@ -43,8 +43,11 @@ hl.bind(
 hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus steam"]]))
 hl.bind(
 	mainMod .. " + SHIFT + D",
-	hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus vesktop 'uwsm-app -- vesktop'"]])
+	hl.dsp.exec_cmd(
+		[[bash -c "$HOME/.local/bin/launch-or-focus vesktop 'uwsm-app -- vesktop --ozone-platform-hint=auto'"]]
+	)
 )
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("ghostty -e btop"))
 
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 --
