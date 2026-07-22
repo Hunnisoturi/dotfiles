@@ -35,7 +35,10 @@ hl.bind(
 )
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("ghostty -e yazi"))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus zen"]]))
+hl.bind(
+	mainMod .. " + SHIFT + B",
+	hl.dsp.exec_cmd([[bash -c "$HOME/.local/bin/launch-or-focus zen 'uwsm-app -- zen.desktop'"]])
+)
 hl.bind(
 	mainMod .. " + SHIFT + P",
 	hl.dsp.exec_cmd("1password --ozone-platform-hint=wayland --enable-features=WaylandWindowDecorations")
